@@ -1,0 +1,57 @@
+<p id="notice"><%= notice %></p>
+
+<div class="panel-body">
+  <div class="tab-content">
+    <div role="tabpanel" class="tab-pane active" id="cabecera">
+  <div class="table-responsive">
+    <table class="table table-bordered table-striped">
+      <tbody>
+          <tr>
+            <td class="active">Nombre de Carga</td>
+            <td><%= @route&.name_load %></td>
+          </tr>
+          <tr>
+            <td class="active">Ruta</td>
+            <td><%= @route&.route %></td>
+          </tr>
+          <tr>
+            <td class="active">Fecha</td>
+            <td><%= @route&.date %></td>
+          </tr>
+          <tr>
+            <td class="active">Hora de Inicio</td>
+            <td><%= @route&.hour_start %></td>
+          </tr>
+          <tr>
+            <td class="active">Hora de Fin</td>
+            <td><%= @route&.hour_end %></td>
+          </tr>
+      </tbody>
+    </table>
+
+    <table class="table table-bordered table-striped">
+      <thead>
+        <th>Paradas</th>
+        <th colspan="2"></th>
+      </thead>
+      <tbody>
+        <% @route.stops.each do |stop| %>
+          <tr>
+            <td class="active">Hora de Llegada: <%= stop&.hour_arrival %></td>
+            <td class="active">Carga: <%= stop&.load %></td>
+          </tr>
+          <tr>
+            <td class="active">Latitud: <%= stop&.latitude %></td>
+            <td class="active">longitude: <%= stop&.longitude %></td>
+          </tr>
+        <% end %>
+      </tbody>
+    </table>
+  </div>
+</div>
+
+</div>
+
+
+<%= link_to 'Edit', edit_route_path(@route) %> |
+<%= link_to 'Back', routes_path %>

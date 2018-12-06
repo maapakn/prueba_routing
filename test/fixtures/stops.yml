@@ -1,0 +1,15 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  route: one
+  hour_arrival: MyString
+  load: 1
+  latitude: MyString
+  longitude: MyString
+
+two:
+  route: two
+  hour_arrival: MyString
+  load: 1
+  latitude: MyString
+  longitude: MyString
